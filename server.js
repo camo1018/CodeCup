@@ -29,9 +29,11 @@ app.configure(function() {
     app.set('view options', { pretty: true });
     app.set('view engine', 'html');
     app.engine('.html', ejs.renderFile);
-    app.use(express.static(__dirname+'/public'));
-});
+    app.use(express.static(__dirname+'/public'));N
+})
 
+// Load Mongo Definitions
+var mongoDefinitions = require('./mongoDefinitions/mongoDefinitions.js');
 
 // Index page route
 app.get('/', function(req, res) {
