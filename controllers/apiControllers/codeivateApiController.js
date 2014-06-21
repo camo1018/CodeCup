@@ -1,13 +1,13 @@
 module.exports = function(app, request) {
     app.get('/actions/getCodeivateUserInfo', function(req, res) {
-        var username = req.username;
+        var username = req.query.username;
         console.log('Getting Codeivate user information for ' + username);
-        request('http://http://codeivate.com/users/' + username + '.json', function(error, response, body) {
+        request('http://codeivate.com/users/' + username + '.json', function(error, response, body) {
             if (error) {
                 throw error;
             }
 
-            res.json(response);
+            res.json(body);
         });
     });
 

@@ -16,7 +16,7 @@ mongoose.connection.once('open', function(err) {
     if (err) {
         throw err;
     }
-	console.log('Connected to mongodb;')
+	console.log('Connected to mongodb');
 });
 
 var app = express();
@@ -29,7 +29,7 @@ app.configure(function() {
     app.set('view options', { pretty: true });
     app.set('view engine', 'html');
     app.engine('.html', ejs.renderFile);
-    app.use(express.static(__dirname+'/public'));N
+    app.use(express.static(__dirname+'/public'));
 })
 
 // Load Mongo Definitions
