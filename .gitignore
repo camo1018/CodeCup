@@ -39,3 +39,4 @@ Thumbs.db
 # WebStorm files #
 ##################
 .idea/*
+.floo*
