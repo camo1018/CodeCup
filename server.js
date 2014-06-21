@@ -9,7 +9,7 @@ var async = require('async');
 var request = require('request');
 
 var mongoose = require('mongoose');
-var mongoHostname = 'mongodb://127.0.0.1:27017/codecup';
+var mongoHostname = 'mongodb://107.170.116.232:27017/codecup';
 mongoose.connect(mongoHostname);
 
 mongoose.connection.once('open', function(err) {
