@@ -33,7 +33,7 @@ module.exports = function(app, request) {
         }
     };
 
-    this.getAllCodeviateUserInfo = function(callback) {
+    this.getAllCodeivateUserInfo = function(callback) {
         var usernames = ["swilliams", "camo1018", "ptolemy"];
         getCodeivateUserInfo(usernames, function(body) {
             callback(body);
@@ -47,8 +47,8 @@ module.exports = function(app, request) {
         });
     });
 
-    app.get('/actions/getAllCodeviateUserInfo', function(req, res) {
-        getAllCodeviateUserInfo(function(body) {
+    app.get('/actions/getAllCodeivateUserInfo', function(req, res) {
+        getAllCodeivateUserInfo(function(body) {
             res.json(body);
         })
     });
