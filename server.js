@@ -5,14 +5,10 @@ var portNumber = 8000;
 
 var express = require('express');
 var ejs = require('ejs');
-var async = require('async');
-var request = require('request');
 
-var mongoose = require('mongoose');
-var mongoHostname = 'mongodb://107.170.116.232:27017/codecup';
-mongoose.connect(mongoHostname);
+var modules = require('./modules');
 
-mongoose.connection.once('open', function(err) {
+modules.Mongoose.connection.once('open', function(err) {
     if (err) {
         throw err;
     }
@@ -30,10 +26,7 @@ app.configure(function() {
     app.set('view engine', 'html');
     app.engine('.html', ejs.renderFile);
     app.use(express.static(__dirname+'/public'));
-})
-
-// Load Mongo Definitions
-var mongoDefinitions = require('./mongoDefinitions/mongoDefinitions.js');
+});
 
 // Index page route
 app.get('/', function(req, res) {
@@ -41,10 +34,10 @@ app.get('/', function(req, res) {
 });
 
 //  Controller Initialization
-require('./controllers/homeController.js')(app, request);
+require('./controllers/homeController.js')(app, modules);
 
 // Api Controller Initialization
-require('./controllers/apiControllers/codeivateApiController.js')(app, request, async);
+require('./controllers/apiControllers/codeivateApiController.js')(app, modules);
 
 console.log('CodeCup NodeJS Instance started at port ' + portNumber);
 app.listen(portNumber);

@@ -1,11 +1,10 @@
-module.exports = function(app, request, async) {
+module.exports = function(app, modules) {
 
     /* Functions */
 
     // Get Codeivate User Info for a single user.
     var getCodeivateUser = function(username, callback) {
-        console.log('Getting Codeivate user information for ' + username);
-        request('http://codeivate.com/users/' + username + '.json', function(error, response, body) {
+        modules.Request('http://codeivate.com/users/' + username + '.json', function(error, response, body) {
             if (error) {
                 throw error;
             }
@@ -17,8 +16,7 @@ module.exports = function(app, request, async) {
     var getCodeivateUsers = function(usernames, callback) {
         var result = new Array();
 
-        async.each(usernames, function(username, subCallback) {
-            console.log("Requesting " + username);
+        modules.Async.eachSeries(usernames, function(username, subCallback) {
             getCodeivateUser(username, function(body) {
                result.push(body);
                subCallback();
@@ -27,15 +25,7 @@ module.exports = function(app, request, async) {
             if (err) {
                 throw err;
             }
-            console.log('All users retrieved');
             callback('[' + result.join(',') + ']');
-        });
-    };
-
-    var getAllCodeivateUsers = function(callback) {
-        var usernames = ["swilliams", "camo1018", "ptolemy"];
-        getCodeivateUsers(usernames, function(body) {
-            callback(body);
         });
     };
 
@@ -49,8 +39,11 @@ module.exports = function(app, request, async) {
     });
 
     app.get('/actions/getAllCodeivateUsers', function(req, res) {
-        getAllCodeivateUsers(function(body) {
-            res.json(body);
-        })
+        modules.MongoDefinitions.User.find({}, 'codeivateUsername', function(err, documents) {
+            var usernames = modules.LINQ.from(documents).select(function(document) { return document.codeivateUsername}).toArray();
+            getCodeivateUsers(usernames, function(body) {
+                res.json(body);
+            })
+        });
     });
 }
