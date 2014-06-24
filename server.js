@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 require('./controllers/homeController.js')(app, request);
 
 // Api Controller Initialization
-require('./controllers/apiControllers/codeivateApiController.js')(app, request);
+require('./controllers/apiControllers/codeivateApiController.js')(app, request, async);
 
 console.log('CodeCup NodeJS Instance started at port ' + portNumber);
 app.listen(portNumber);
