@@ -1,0 +1,18 @@
+.codeivateContainer {
+    border: 2px solid;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 3px #888888;
+    margin: 10px 0 10px 0;
+    padding: 0 20px 0 20px;
+}
+
+.codeivateContainer.active {
+    border: 2px solid;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 3px #888888;
+    background-color: #3becff;
+}
+
+.codeivateContainer.inactive {
+    background-color: #ccfff0;
+}

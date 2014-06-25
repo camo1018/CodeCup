@@ -13,14 +13,28 @@ async.series([
         mongoDefinitions.User.collection.drop();
 
         var users = new Array();
-        for (var i = 0; i < 10; i++) {
-            var user = new mongoDefinitions.User( {
-                username: 'User ' + i,
-                codeivateUsername: 'camo1018',
-                githubUsername: 'camo1018'
-            });
-            users.push(user);
-        }
+
+        var paul = new mongoDefinitions.User( {
+            username: 'camo1018',
+            codeivateUsername: 'camo1018',
+            githubUsername: 'camo1018'
+        });
+
+        var michael = new mongoDefinitions.User( {
+            username: 'ptolemy',
+            codeivateUsername: 'ptolemy',
+            githubUsername: 'ptolemy'
+        });
+
+        var stephan = new mongoDefinitions.User( {
+            username: 'swilliams',
+            codeivateUsername: 'swilliams',
+            githubUsername: 'swilliams'
+        });
+
+        users.push(paul);
+        users.push(michael);
+        users.push(stephan);
 
         async.each(users, function(user, subCallback) {
             user.save();

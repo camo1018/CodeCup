@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/codecup.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,22 +19,34 @@
 </head>
 <body>
 
-<script type="text/html" id="codeivate-user-template">
-<div style="display: inline-block">
-    <h3 data-bind="text: name"></h3>
-</div>
+<script type="text/html" id="codeivate-user-active-template">
+    <div style="display: inline-block" class="codeivateContainer active">
+        <p data-bind="text: 'Username: ' + name"></p>
+        <p data-bind="text: 'Level: ' + level"></p>
+    </div>
 </script>
 
-<div id="user-container" data-bind="template: { name: 'codeivate-user-template', foreach: users, afterAdd: addToMasonry }"></div>
+<script type="text/html" id="codeivate-user-inactive-template">
+    <div style="display: inline-block" class="codeivateContainer inactive">
+        <p data-bind="text: 'Username: ' + name"></p>
+        <p data-bind="text: 'Level: ' + level"></p>
+    </div>
+</script>
+
+<h3>Developers Programming Now:</h3>
+<div id="active-user-container" data-bind="template: { name: 'codeivate-user-active-template', foreach: activeUsers, afterAdd: addToActiveMasonry }"></div>
+
+<h3>Developers Resting::</h3>
+<div id="inactive-user-container" data-bind="template: { name: 'codeivate-user-inactive-template', foreach: inactiveUsers, afterAdd: addToInactiveMasonry }"></div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/lib/bootstrap.min.js"></script>
 <script src="js/lib/knockout-3.1.0.js"></script>
+<script src="js/lib/linq.min.js"></script>
 <script src="js/lib/masonry.pkgd.js"></script>
-<script src="js/masonryLoader.js"></script>
-<script src="viewmodels/viewmodels.js"></script>
 <script src="js/home/home.js"></script>
+<script src="viewmodels/viewmodels.js"></script>
 </body>
 </html>

@@ -1,11 +1,14 @@
 // Requires MasonryLoader
 
 function CodeivateUsersViewModel() {
-    this.addToMasonry = function(element, index, data) {
-        masonry.appended(element);
-        console.log('adding');
+    this.addToActiveMasonry = function(element, index, data) {
+        activeMasonry.appended(element);
     };
-    this.users = ko.observable([]);
+    this.addToInactiveMasonry = function(element, index, data) {
+        inactiveMasonry.appended(element);
+    };
+    this.activeUsers = ko.observableArray();
+    this.inactiveUsers = ko.observableArray();
 }
 
 var codeivateUsersViewModel = new CodeivateUsersViewModel();
