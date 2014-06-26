@@ -33,11 +33,13 @@
     </div>
 </script>
 
-<h3>Developers Programming Now:</h3>
-<div id="active-user-container" data-bind="template: { name: 'codeivate-user-active-template', foreach: activeUsers, afterAdd: addToActiveMasonry }"></div>
+<div id="user-container" class="userContainer">
+    <h3>Developers Programming Now:</h3>
+    <div id="active-user-container" data-bind="template: { name: 'codeivate-user-active-template', foreach: activeUsers, afterAdd: addToActiveMasonry }"></div>
 
-<h3>Developers Resting::</h3>
-<div id="inactive-user-container" data-bind="template: { name: 'codeivate-user-inactive-template', foreach: inactiveUsers, afterAdd: addToInactiveMasonry }"></div>
+    <h3>Developers Resting::</h3>
+    <div id="inactive-user-container" data-bind="template: { name: 'codeivate-user-inactive-template', foreach: inactiveUsers, afterAdd: addToInactiveMasonry }"></div>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
