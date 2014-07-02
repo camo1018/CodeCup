@@ -16,4 +16,12 @@ $(function() {
     });
 });
 
+// Form Script
+var signIn = function() {
+    console.log('Signing in user');
+}
+
+var register = function() {
+    window.location = 'users/register';
+}
 

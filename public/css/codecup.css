@@ -1,5 +1,13 @@
 /* Home */
 
+.navbar {
+    background-color: #2e2f2b;
+}
+
+.codecup-brand {
+    color: #00adff !important;
+}
+
 .userContainer {
     position: absolute;
     top: 10%;
@@ -16,9 +24,9 @@
 }
 
 .codeivateContainer.active {
-    background-color: #3becff;
+    background-color: #9fff8b;
 }
 
 .codeivateContainer.inactive {
-    background-color: #ccfff0;
+    background-color: #e0e3d8;
 }
