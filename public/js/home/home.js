@@ -14,14 +14,12 @@ $(function() {
     	codeivateUsersViewModel.activeUsers(activeUsers);
         codeivateUsersViewModel.inactiveUsers(inactiveUsers);
     });
+
+    $('#login-button').on('click', function() {
+        window.location = 'users/login';
+    });
+
+    $('#signin-button').on('click', function() {
+        window.location = 'users/register';
+    });
 });
-
-// Form Script
-var signIn = function() {
-    console.log('Signing in user');
-}
-
-var register = function() {
-    window.location = 'users/register';
-}
-

@@ -19,20 +19,6 @@
 </head>
 <body>
 
-<script type="text/html" id="codeivate-user-active-template">
-    <div style="display: inline-block" class="codeivateContainer active">
-        <p data-bind="text: 'Username: ' + name"></p>
-        <p data-bind="text: 'Level: ' + level"></p>
-    </div>
-</script>
-
-<script type="text/html" id="codeivate-user-inactive-template">
-    <div style="display: inline-block" class="codeivateContainer inactive">
-        <p data-bind="text: 'Username: ' + name"></p>
-        <p data-bind="text: 'Level: ' + level"></p>
-    </div>
-</script>
-
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -45,13 +31,22 @@
     </div>
 </div>
 
-<div id="user-container" class="userContainer">
-    <h3>Developers Programming Now:</h3>
-    <div id="active-user-container" data-bind="template: { name: 'codeivate-user-active-template', foreach: activeUsers, afterAdd: addToActiveMasonry }"></div>
-
-    <h3>Developers Resting:</h3>
-    <div id="inactive-user-container" data-bind="template: { name: 'codeivate-user-inactive-template', foreach: inactiveUsers, afterAdd: addToInactiveMasonry }"></div>
+<div id="main-container" class="mainContainer center width-20">
+    <div class="loginContainer">
+        <h2 class="text-align-center">Log in to Code Cup</h2>
+        <form name="login-form">
+            <p>Username:</p>
+            <input type="text" name="username" class="form-control" placeholder="Username">
+            <br>
+            <p>Password:</p>
+            <input type="password" name="password" class="form-control" placeholder="Password">
+            <br>
+            <input type="submit" class="btn btn-success width-20 center" name="login">
+        </form>
+    </div>
 </div>
+
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -60,7 +55,7 @@
 <script src="/js/lib/knockout-3.1.0.js"></script>
 <script src="/js/lib/linq.min.js"></script>
 <script src="/js/lib/masonry.pkgd.js"></script>
-<script src="/js/home/home.js"></script>
+<script src="/js/users/login.js"></script>
 <script src="/viewmodels/viewmodels.js"></script>
 </body>
 </html>

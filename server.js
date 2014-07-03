@@ -35,6 +35,7 @@ app.get('/', function(req, res) {
 
 //  Controller Initialization
 require('./controllers/homeController.js')(app, modules);
+require('./controllers/usersController.js')(app, modules);
 
 // Api Controller Initialization
 require('./controllers/apiControllers/codeivateApiController.js')(app, modules);

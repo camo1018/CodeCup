@@ -10,4 +10,4 @@ function include(file) {
 }
 
 // List all viewmodels here.
-include('viewmodels/codeivateUsers.js');
+include('/viewmodels/codeivateUsers.js');
