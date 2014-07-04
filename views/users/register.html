@@ -9,13 +9,6 @@
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/codecup.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 
@@ -32,16 +25,32 @@
 </div>
 
 <div id="main-container" class="mainContainer center width-20">
-    <div class="loginContainer">
-        <h2 class="text-align-center">Log in to Code Cup</h2>
-        <form name="login-form">
+    <div class="registerContainer">
+        <h2 class="text-align-center">Registration</h2>
+        <form name="registration-form" onsubmit="register()">
             <p>Username:</p>
             <input type="text" name="username" class="form-control" placeholder="Username">
             <br>
             <p>Password:</p>
             <input type="password" name="password" class="form-control" placeholder="Password">
             <br>
-            <input type="submit" class="btn btn-success width-20 center" name="login">
+            <p>Confirm password:</p>
+            <input type="password" name="password-confirm" class="form-control" placeholder="Confirm password">
+            <br>
+            <hr class="black">
+            <div>
+                <p class="inline-block">Codeivate username:</p>
+                <p class="inline-block glyphicon glyphicon-question-sign info-popover" rel="popover" data-original-title="What's this?" data-content="Provide us with your Codeivate username so that we can keep track of your stats and compare them to other users." data-html="true" data-trigger="hover"></p>
+            </div>
+            <input type="text" name="codeivate-username" class="form-control" placeholder="Codeivate username">
+            <br>
+            <div>
+                <p class="inline-block">Github username:</p>
+                <p class="inline-block glyphicon glyphicon-question-sign info-popover" rel="popover" data-original-title="What's this?" data-content="Provide us with your Github handle so that we can retrieve public projects that you are working on so that other users can see what you've been working on." data-html="true" data-trigger="hover"></p>
+            </div>
+            <input type="text" name="github-username" class="form-control" placeholder="Github username">
+            <br>
+            <input type="submit" class="btn btn-success width-20 center" name="register">
         </form>
     </div>
 </div>

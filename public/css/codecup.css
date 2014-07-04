@@ -4,6 +4,14 @@ body {
     background-color: #d1d1d1;
 }
 
+hr {
+    border-color: #000ba2;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
 .mainContainer {
     position: absolute;
     padding-top: 50px;
@@ -65,5 +73,11 @@ body {
 /* Login */
 
 .loginContainer {
+    padding-top: 10%;
+}
+
+/* Register */
+
+.registerContainer {
     padding-top: 10%;
 }

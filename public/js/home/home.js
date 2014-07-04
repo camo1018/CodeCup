@@ -16,10 +16,10 @@ $(function() {
     });
 
     $('#login-button').on('click', function() {
-        window.location = 'users/login';
+        window.location = '/users/login';
     });
 
-    $('#signin-button').on('click', function() {
-        window.location = 'users/register';
+    $('#register-button').on('click', function() {
+        window.location = '/users/register';
     });
 });
