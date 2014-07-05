@@ -26,18 +26,6 @@
     </div>
 </script>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand codecup-brand" href="/home">Code Cup</a>
-        </div>
-        <div class="navbar-form navbar-right">
-            <button type="button" class="btn btn-success" id="login-button">Log in</button>
-            <button type="button" class="btn btn-success" id="register-button">Register</button>
-        </div>
-    </div>
-</div>
-
 <div id="user-container" class="userContainer">
     <h3>Developers Programming Now:</h3>
     <div id="active-user-container" data-bind="template: { name: 'codeivate-user-active-template', foreach: activeUsers, afterAdd: addToActiveMasonry }"></div>
@@ -53,6 +41,7 @@
 <script src="/js/lib/knockout-3.1.0.js"></script>
 <script src="/js/lib/linq.min.js"></script>
 <script src="/js/lib/masonry.pkgd.js"></script>
+<script src="/js/common.js"></script>
 <script src="/js/home/home.js"></script>
 <script src="/viewmodels/viewmodels.js"></script>
 </body>

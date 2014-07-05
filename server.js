@@ -19,6 +19,8 @@ var app = express();
 
 app.use(express.cookieParser());
 app.use(express.session({ secret: 'PVM10fJACoOpAw' }));
+app.use(express.urlencoded());
+app.use(express.json());
 
 app.configure(function() {
     app.set('views', __dirname+'/views');
@@ -39,6 +41,7 @@ require('./controllers/usersController.js')(app, modules);
 
 // Api Controller Initialization
 require('./controllers/apiControllers/codeivateApiController.js')(app, modules);
+require('./controllers/apiControllers/usersApiController.js')(app, modules);
 
 console.log('CodeCup NodeJS Instance started at port ' + portNumber);
 app.listen(portNumber);

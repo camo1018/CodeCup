@@ -14,12 +14,4 @@ $(function() {
     	codeivateUsersViewModel.activeUsers(activeUsers);
         codeivateUsersViewModel.inactiveUsers(inactiveUsers);
     });
-
-    $('#login-button').on('click', function() {
-        window.location = '/users/login';
-    });
-
-    $('#register-button').on('click', function() {
-        window.location = '/users/register';
-    });
 });

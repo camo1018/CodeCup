@@ -14,3 +14,6 @@ exports.MongoDefinitions = mongoDefinitions;
 
 var linq = require('linq');
 exports.LINQ = linq;
+
+var bcrypt = require('bcrypt');
+exports.Bcrypt = bcrypt;

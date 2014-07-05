@@ -5,7 +5,12 @@ body {
 }
 
 hr {
+    margin-top: 0;
     border-color: #000ba2;
+}
+
+.not-visible {
+    display: none;
 }
 
 .inline-block {
@@ -28,8 +33,20 @@ hr {
     right: 0;
 }
 
+.vertical-center {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
 .navbar {
     background-color: #2e2f2b;
+}
+
+.navbar-username {
+    color: #dedbc1;
+    margin-right: 10px;
 }
 
 .codecup-brand {
@@ -43,6 +60,18 @@ hr {
 .indent-10 {
     position: absolute;
     left: 10%;
+}
+
+.top-10 {
+    position: absolute;
+    top: 10%;
+}
+
+.alert-box {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 /* Home */

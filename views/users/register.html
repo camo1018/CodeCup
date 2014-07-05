@@ -11,46 +11,51 @@
     <link href="/css/codecup.css" rel="stylesheet">
 </head>
 <body>
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand codecup-brand" href="/home">Code Cup</a>
-        </div>
-        <div class="navbar-form navbar-right">
-            <button type="button" class="btn btn-success" id="login-button">Log in</button>
-            <button type="button" class="btn btn-success" id="register-button">Register</button>
-        </div>
-    </div>
-</div>
-
 <div id="main-container" class="mainContainer center width-20">
     <div class="registerContainer">
         <h2 class="text-align-center">Registration</h2>
-        <form name="registration-form" onsubmit="register()">
-            <p>Username:</p>
-            <input type="text" name="username" class="form-control" placeholder="Username">
+        <form name="registration-form">
+            <div id="username-wrapper">
+                <label>Username:</label>
+                <input id="username-field" type="text" name="username" class="form-control" placeholder="Username">
+                <div id="username-error" class="alert-box alert-danger not-visible" role="alert">
+                    <strong>A user with that username already exists.</strong>
+                </div>
+                <div id="username-empty-error" class="alert-box alert-danger not-visible" role="alert">
+                    <strong>Username cannot be empty.</strong>
+                </div>
+            </div>
             <br>
-            <p>Password:</p>
-            <input type="password" name="password" class="form-control" placeholder="Password">
+            <div id="password-wrapper">
+                <label>Password:</label>
+                <input id="password-field" type="password" name="password" class="form-control" placeholder="Password">
+                <div id="password-empty-error" class="alert-box alert-danger not-visible" role="alert">
+                    <strong>Password cannot be empty..</strong>
+                </div>
+            </div>
             <br>
-            <p>Confirm password:</p>
-            <input type="password" name="password-confirm" class="form-control" placeholder="Confirm password">
+            <div id="password-confirm-wrapper">
+                <label>Confirm password:</label>
+                <input id="password-confirm-field" type="password" name="password-confirm" class="form-control" placeholder="Confirm password">
+                <div id="password-error" class="alert-box alert-danger not-visible" role="alert">
+                    <strong>Passwords do not match.</strong>
+                </div>
+            </div>
             <br>
             <hr class="black">
             <div>
-                <p class="inline-block">Codeivate username:</p>
+                <label class="inline-block">Codeivate username:</label>
                 <p class="inline-block glyphicon glyphicon-question-sign info-popover" rel="popover" data-original-title="What's this?" data-content="Provide us with your Codeivate username so that we can keep track of your stats and compare them to other users." data-html="true" data-trigger="hover"></p>
             </div>
-            <input type="text" name="codeivate-username" class="form-control" placeholder="Codeivate username">
+            <input id="codeivate-username-field" type="text" name="codeivate-username" class="form-control" placeholder="Codeivate username">
             <br>
             <div>
-                <p class="inline-block">Github username:</p>
-                <p class="inline-block glyphicon glyphicon-question-sign info-popover" rel="popover" data-original-title="What's this?" data-content="Provide us with your Github handle so that we can retrieve public projects that you are working on so that other users can see what you've been working on." data-html="true" data-trigger="hover"></p>
+                <label class="inline-block">Github username:</label>
+                <p class="inline-block glyphicon glyphicon-question-sign info-popover" rel="popover" data-original-title="What's this?" data-content="Provide us with your Github handle so that we can retrieve public projects that you are working on so that other users can see what you've been working on.  You can leave this blank if you don't wish to share your project information with others." data-html="true" data-trigger="hover"></p>
             </div>
-            <input type="text" name="github-username" class="form-control" placeholder="Github username">
+            <input id="github-username-field" type="text" name="github-username" class="form-control" placeholder="Github username">
             <br>
-            <input type="submit" class="btn btn-success width-20 center" name="register">
+            <input id="register-submit-button" type="button" class="btn btn-success width-20 center" name="register" value="Register">
         </form>
     </div>
 </div>
@@ -64,6 +69,8 @@
 <script src="/js/lib/knockout-3.1.0.js"></script>
 <script src="/js/lib/linq.min.js"></script>
 <script src="/js/lib/masonry.pkgd.js"></script>
+<script src="/js/lib/sha1.js"></script>
+<script src="/js/common.js"></script>
 <script src="/js/users/register.js"></script>
 <script src="/viewmodels/viewmodels.js"></script>
 </body>
