@@ -18,7 +18,8 @@ module.exports = function(app, modules) {
 
         modules.Async.eachSeries(usernames, function(username, subCallback) {
             getCodeivateUser(username, function(body) {
-               result.push(body);
+               if (body != '')
+                    result.push(body);
                subCallback();
             });
         }, function(err) {
